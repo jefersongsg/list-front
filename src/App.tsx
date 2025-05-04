@@ -1,9 +1,13 @@
 import { v4 as uuid } from "uuid";
 import { useState } from "react";
+import { BsCartCheck } from "react-icons/bs";
+import { MdRemoveShoppingCart } from "react-icons/md";
+
+import { Container, Divlist, H1, Button, Input, ListItem } from "./styles";
 
 function App() {
   // const list , setList = useState([])
-  const [inputValue, setInputValue] = useState([{id:uuid(),task:'carne'}]) 
+  const [inputValue, setInputValue] = useState([{id:uuid(),task:''}]) 
   // const [inputtask, setinputtask] = useState('')
   const [listInput, setListInput] = useState('')
 
@@ -18,19 +22,25 @@ function App() {
   }
 
   return (
-    <>
-      <h1>Lista de Compras </h1>
-      <input onChange={inputChanged} type="text" placeholder="Digite um item" />
-      <button onClick={clickButton}>Adicionar</button>
+    <Container>
+      <Divlist>
+      <H1>Lista de Compras </H1>
+      <Input onChange={inputChanged} type="text" placeholder="Digite um item" />
+      <Button onClick={clickButton}>Adicionar</Button>
 
       <ul>
         {
           inputValue.map((item) => (
-          <li key={item.id}>{item.task}</li>
+          <ListItem>
+            <BsCartCheck size={20} color="#2E7D32"/>  
+              <li key={item.id}>{item.task}</li>
+            <MdRemoveShoppingCart size={20} color="#fff"/>
+          </ListItem>
           ))
         }
       </ul>
-    </>
+      </Divlist>
+    </Container>
   )
 }
 
