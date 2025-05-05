@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import { BsCartCheck } from "react-icons/bs";
+import { MdRemoveShoppingCart } from "react-icons/md";
 
 export const Container = styled.div`
-    background: linear-gradient(91deg, #000000 0%, #202020 50%, #000000 100%);
+    background: linear-gradient(90deg, #000000 0%, #202020 50%, #000000 100%);
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -16,14 +18,24 @@ export const Divlist = styled.div`
     ul{
         padding: 0;
         gap: 10px;
+        p{
+            color: #fff;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
     }
 `;
 export const H1 = styled.h1`
     color: #ff9800;
+    text-align: center;
 `;
 export const Input = styled.input`
+    font-family: cursive;
+    color: #000;
+    font-size: 16px;
     background: #2E7D32;
-    color: #fff;
     border-radius: 5px;
     border: none;
     padding: 5px 10px;
@@ -36,6 +48,8 @@ export const Input = styled.input`
     }
 `;
 export const Button = styled.button`
+    font-family: cursive;
+    font-size: 16px;
     background: #9C27B0;
     cursor: pointer;
     color:#fff;
@@ -43,7 +57,8 @@ export const Button = styled.button`
     border: none;
     padding: 5px 10px;
     margin-left: 10px;
-    height: 30px;
+    height: 31px;
+    width: 25%;
     transition: 0.3s;
     &:hover{
         background: #ab47bc;
@@ -54,24 +69,32 @@ export const Button = styled.button`
         opacity: 0.2;
     }
 `;
-export const ListItem = styled.div`
-    cursor: pointer;
-    width: 90%;
-    color: #E65100;
+export const ListItem = styled.div<{isFinished: boolean}>`
+    width: 88%;
+    color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
     margin-bottom: 10px;
-    background: #1d1b17;
+    background: ${props => props.isFinished ? '#2E7D32' : ' #1d1b17'};
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: 0.3s;
-    &:hover{
-        background:  #9C27B0;
-        color: #000;
-        box-shadow: 2px 2px 0px 0px #1d1b17;
-    }
     li{
         list-style: none;
+    }
+`;
+export const Check = styled(BsCartCheck)`
+    cursor: pointer;
+    color: #fff;
+    &:hover{
+        color: #ff9800;
+    }
+`;
+export const Trash = styled(MdRemoveShoppingCart)`
+    cursor: pointer;
+    color: #fff;
+    &:hover{
+        color: #9f1e1e;
     }
 `;
