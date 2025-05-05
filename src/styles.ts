@@ -32,8 +32,9 @@ export const H1 = styled.h1`
     text-align: center;
 `;
 export const Input = styled.input`
+
     font-family: cursive;
-    color: #000;
+    color: #fff;
     font-size: 16px;
     background: #2E7D32;
     border-radius: 5px;
@@ -45,6 +46,9 @@ export const Input = styled.input`
     transition: 0.3s;
     &:focus{
         box-shadow: 2px 2px 0px 0px #1d1b17;
+    }
+    &::placeholder{
+        color: #4c4c4c;
     }
 `;
 export const Button = styled.button`
@@ -59,14 +63,13 @@ export const Button = styled.button`
     margin-left: 10px;
     height: 31px;
     width: 25%;
-    transition: 0.3s;
     &:hover{
-        background: #ab47bc;
+        opacity: 0.7;
         color: #000;
         box-shadow: 2px 2px 0px 0px #1d1b17;
     }
     &:active{
-        opacity: 0.2;
+        opacity: 0.5
     }
 `;
 export const ListItem = styled.div<{isFinished: boolean}>`

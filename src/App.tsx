@@ -15,7 +15,9 @@ function App() {
   }
   // function cliquei no botão
   function clickButton() {
+     listInput.length === 0 ? alert('Digite um item!') :
     setInputValue([...inputValue, {id:uuid(), task:listInput, finished: false}])
+    console.log(listInput)
   }
   function finisheTask(id: string) {
     const newList = inputValue.map((item) => {
@@ -40,7 +42,7 @@ function App() {
 
       <ul>
         {
-          listInput.length === 0 ? <p>Lista vazia!</p> :
+          inputValue.length === 0 ? <p>Lista vazia!</p> :
           inputValue.map((item) => (
           <ListItem isFinished={item.finished} key={item.id}>
             <Check onClick={() => finisheTask(item.id)}/>  
