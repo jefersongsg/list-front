@@ -72,13 +72,13 @@ export const Button = styled.button`
         opacity: 0.5
     }
 `;
-export const ListItem = styled.div<{isFinished: boolean}>`
+export const ListItem = styled.div<{$isFinished: boolean}>`
     width: 88%;
     color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
     margin-bottom: 10px;
-    background: ${props => props.isFinished ? '#2E7D32' : ' #1d1b17'};
+    background: ${props => props.$isFinished ? '#2E7D32' : ' #1d1b17'};
     display: flex;
     justify-content: space-between;
     align-items: center;
